@@ -28,10 +28,13 @@ def save_credentials(credential):
     Function to save contact
     '''
     credential.save_credentials()
-    
+
 def display_user():
     return User.display_user()
 
+
+def display_credentials():
+    return Credentials.display_credentials()
 
 def randomgenerator():
     '''
@@ -71,37 +74,51 @@ def main():
             print(f"New user {first_name} {last_name} has been create and saved!")
             print("\n")
 
-        while True:
-            print("Use these short codes:\ncc - Create credentials details,\ndc - display credential details,\nex - exit the contact list")
-            short_code = input().lower()
-            
-            if short_code == 'cc':
-                print("New Account")
-                print("-"*30)
-                
-                print("Account Type(eg. Facebook, twitter, instagram...) : ")
-                type = input()
-                
-                print("User name : ")
-                username = input()
             while True:
-                print("use these codes to choose the password modes:\n gp - system generated password,\n tp - type password,\n ")
-                pass_code = input().lower()
-                enteredPassword = ''
-                if pass_code=='tp':
-                    print('Enter your password')
-                    enteredPassword = input()
-                elif pass_code=='gp':
-                    print('Enter your password')
-                    enteredPassword = randomgenerator()
-
-                save_credentials(create_credentials(type, username, enteredPassword))#create and save new contact
-                print("\n")
-                print(f"New contact {username} for {type} saved successfully")
-                print("\n")
-
-                break
+                print("Use these short codes:\ncc - Create credentials details,\ndc - display credential details,\nex - exit the contact list")
+                short_code = input().lower()
                 
+                if short_code == 'cc':
+                    print("New Account")
+                    print("-"*30)
+                    
+                    print("Account Type(eg. Facebook, twitter, instagram...) : ")
+                    type = input()
+                    
+                    print("User name : ")
+                    username = input()
+                while True:
+                    print("use these codes to choose the password modes:\n gp - system generated password,\n tp - type password,\n ")
+                    pass_code = input().lower()
+                    enteredPassword = ''
+                    if pass_code=='tp':
+                        print('Enter your password')
+                        enteredPassword = input()
+                    elif pass_code=='gp':
+                        print('Enter your password')
+                        enteredPassword = randomgenerator()
+
+                    save_credentials(create_credentials(type, username, enteredPassword))#create and save new contact
+                    print("\n")
+                    print(f"New contact {username} for {type} saved successfully")
+                    print("\n")
+
+                    break
+            
+        elif short_code == 'dc':
+
+            if display_credentials():
+                    print("These are the accounts saved in the app:")
+                    print('\n')
+
+                    for credential in display_credentials():
+                            print(f"{credential.credentials_account} {credential.credentials_username} .....{credential.credentials_password}")
+
+                    print('\n')
+            else:
+                    print('\n')
+                    print("You have not saved any account details in the app")
+                    print('\n')
             # elif short_code == "ex":
             #             print("Bye .......")
             #             break
