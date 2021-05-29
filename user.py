@@ -11,4 +11,9 @@ class User:
         self.lastName = lastName
         self.username = username
 
-def save_user(self):
+    def save_user(self):
+        '''Method to save the detais of a user
+        '''
+        User.user_list.append(self)
+    
+    
