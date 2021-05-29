@@ -22,7 +22,7 @@ def main():
     print("\n")
 
     while True:
-        print("Use the following codes to proceed:\n na - create a new contact,\n dc - display contact,\n ex - exit the contact list")
+        print("Use the following codes to proceed:\n na - create a new contact,\n  ex - exit the contact list")
         short_code = input().lower()
 
         if short_code == 'na':
@@ -41,7 +41,9 @@ def main():
             print("Enter your password : ")
             password = input()
 
-            
+        elif short_code == "ex":
+                    print("Bye .......")
+                    break
 
 main()
     
