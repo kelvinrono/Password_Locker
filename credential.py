@@ -17,7 +17,7 @@ class Credentials:
         Credentials.credential_details.append(self)
 
   
-@classmethod
-def display_details(cls):
-        return cls.credential_details
+    @classmethod
+    def display_credentials(cls):
+            return cls.credential_details
 
