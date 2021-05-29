@@ -1,6 +1,7 @@
 #!/usr/bin/env python3.8
 from user import User
 import random
+from credential import Credentials
 def createUserAccount(firstName, lastName, username, password):
     '''
     This function will create a new user account
@@ -8,10 +9,26 @@ def createUserAccount(firstName, lastName, username, password):
     new_user = User(firstName, lastName, username,password)
     return new_user
 
+def create_credentials(credential_account, credential_username,credential_password):
+    '''
+    Function to create new contact
+    '''
+    new_credentials = Credentials(credential_account, credential_username, credential_password)
+    return new_credentials
+
+
 def save_user(user):
     '''
     Function that will save the user
     '''
+
+
+def save_credentials(credential):
+    '''
+    Function to save contact
+    '''
+    credential.save_credentials()
+    
 def display_user():
     return User.display_user()
 
@@ -78,6 +95,12 @@ def main():
                     print('Enter your password')
                     enteredPassword = randomgenerator()
 
+                save_credentials(create_credentials(type, username, enteredPassword))#create and save new contact
+                print("\n")
+                print(f"New contact {username} for {type} saved successfully")
+                print("\n")
+
+                break
                 
             # elif short_code == "ex":
             #             print("Bye .......")
