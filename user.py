@@ -1,6 +1,6 @@
 class User:
     user_list = []# Array to store the users accounts
-    def __init__(self, firstName, lastName, username):
+    def __init__(self, firstName, lastName, username, password):
         '''
         This is used to initialize the properties of the class credentials
         firstName --> initialize the first name of the user
@@ -10,6 +10,7 @@ class User:
         self.firstName = firstName
         self.lastName = lastName
         self.username = username
+        self.password = password
 
     def save_user(self):
         '''Method to save the detais of a user
