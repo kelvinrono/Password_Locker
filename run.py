@@ -59,7 +59,7 @@ def main():
             short_code = input().lower()
             
             if short_code == 'cc':
-                prinke;t("New Account")
+                print("New Account")
                 print("-"*30)
                 
                 print("Account Type(eg. Facebook, twitter, instagram...) : ")
@@ -67,10 +67,21 @@ def main():
                 
                 print("User name : ")
                 username = input()
+            while True:
+                print("use these codes to choose the password modes:\n gp - system generated password,\n tp - type password,\n ")
+                pass_code = input().lower()
+                enteredPassword = ''
+                if pass_code=='tp':
+                    print('Enter your password')
+                    enteredPassword = input()
+                elif pass_code=='gp':
+                    print('Enter your password')
+                    enteredPassword = randomgenerator()
+
                 
-            elif short_code == "ex":
-                        print("Bye .......")
-                        break
+            # elif short_code == "ex":
+            #             print("Bye .......")
+            #             break
 
         
 
