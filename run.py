@@ -1,6 +1,6 @@
 #!/usr/bin/env python3.8
 from user import User
-
+import random
 def createUserAccount(firstName, lastName, username, password):
     '''
     This function will create a new user account
@@ -14,6 +14,14 @@ def save_user(user):
     '''
 def display_user():
     return User.display_user()
+
+
+def randomgenerator():
+    '''
+    This is a method that will create random passwords
+    '''
+    rand = random.randint(10000,99999)
+    return rand
 
 def main():
     print('Welcome to password ;Locker app,please enter your name \n')
@@ -46,9 +54,23 @@ def main():
             print(f"New user {first_name} {last_name} has been create and saved!")
             print("\n")
 
-        elif short_code == "ex":
-                    print("Bye .......")
-                    break
+        while True:
+            print("Use these short codes:\ncc - Create credentials details,\ndc - display credential details,\nex - exit the contact list")
+            short_code = input().lower()
+            
+            if short_code == 'cc':
+                prinke;t("New Account")
+                print("-"*30)
+                
+                print("Account Type(eg. Facebook, twitter, instagram...) : ")
+                type = input()
+                
+                print("User name : ")
+                username = input()
+                
+            elif short_code == "ex":
+                        print("Bye .......")
+                        break
 
         
 

@@ -1,14 +1,14 @@
-import random
 class Credentials:
     
     credential_details = [] #initialize an array to store the credential details
 
-    def __init__(self, username, password):
+    def __init__(self,credentials_account, credentials_username, credentials_password):
         '''
         This will initialize the credentials details required for the credentials class
         '''
-        self.credentials_username = username
-        self.credentials_password = password
+        self.credentials_account = credentials_account
+        self.credentials_username = credentials_username
+        self.credentials_password = credentials_password
 
     def save_credentials(self):
         '''
@@ -16,14 +16,8 @@ class Credentials:
         '''
         Credentials.credential_details.append(self)
 
-    import random
-
-def randomgen():
-    '''
-    This is a method that will create random passwords
-    '''
-    rand = random.randint(10000,99999)
-    return rand
-
-
+  
+@classmethod
+def display_details(cls):
+        return cls.credential_details
 
