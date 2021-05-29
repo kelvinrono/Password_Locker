@@ -41,9 +41,16 @@ def main():
             print("Enter your password : ")
             password = input()
 
+            save_user(createUserAccount(first_name, last_name, userName,password))#create and save new contact
+            print("\n")
+            print(f"New user {first_name} {last_name} has been create and saved!")
+            print("\n")
+
         elif short_code == "ex":
                     print("Bye .......")
                     break
+
+        
 
 main()
     
