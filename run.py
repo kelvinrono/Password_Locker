@@ -29,6 +29,11 @@ def save_credentials(credential):
     '''
     credential.save_credentials()
 
+def delete_credentials(credential):
+    '''
+    This is a function that deletes credentials
+    '''
+    Credentials.delete_credentials()
 def display_user():
     return User.display_user()
 
@@ -44,17 +49,17 @@ def randomgenerator():
     return rand
 
 def main():
-    print('Welcome to password ;Locker app,please enter your name \n')
+    print('Welcome to password Locker app,please enter your name \n ')
     user_name = input()
-    print(f"Hello {user_name}. please create password locker acount first")
+    print(f"Hello {user_name}, ")
     print("\n")
 
     while True:
-        print("Use the following codes to proceed:\n na - create a new Locker,\n  ex - exit the password locker app")
+        print(" You will need to create an Password Locker account first before you start saving your credentials! \nProceed using these short code. \n na - create a new Locker,\n  ex - exit the password locker app")
         short_code = input().lower()
 
         if short_code == 'na':
-            print("New Account")
+            print("New Password Locker Account")
             print("-"*30)
             
             print("Enter your username : ")
@@ -71,15 +76,15 @@ def main():
 
             save_user(createUserAccount(first_name, last_name, userName,password))#create and save new contact
             print("\n")
-            print(f"New user {first_name} {last_name} has been create and saved!")
+            print(f"Congratulations! {first_name} {last_name}, You have created password locker account. Proceed to store you credentials now.\n")
             print("\n")
 
             while True:
-                print("Use these short codes:\ncc - Create credentials details,\ndc - display credential details,\nex - exit the contact list, \n del - delete account")
+                print("Use these short codes:\n add - Add credentials details,\ndc - display stored credential details,\nex - exit the contact list, \n del - delete account")
                 short_code = input().lower()
                 
-                if short_code == 'cc':
-                    print("New Account")
+                if short_code == 'add':
+                    print("New Credentials account")
                     print("-"*30)
                     
                     print("Account Type(eg. Facebook, twitter, instagram...) : ")
@@ -100,7 +105,7 @@ def main():
 
                         save_credentials(create_credentials(type, username, enteredPassword))#create and save new contact
                         print("\n")
-                        print(f"New contact {username} for {type} saved successfully")
+                        print(f"New credentials details for account {type} saved successfully. \n Username: {username} \n password is: {enteredPassword}")
                         print("\n")
 
                         break
@@ -111,7 +116,7 @@ def main():
                         print('\n')
 
                         for credential in display_credentials():
-                                print(f"{credential.credentials_account} {credential.credentials_username} .....{credential.credentials_password}")
+                                print(f" Account type:{credential.credentials_account} \n Username: {credential.credentials_username} \n Password: {credential.credentials_password}")
 
                         print('\n')
 
