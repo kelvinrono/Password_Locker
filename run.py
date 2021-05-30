@@ -124,6 +124,9 @@ def main():
 
                         print('\n')
 
+                    else:
+                        print('There is no credentials saved')
+
                 elif short_code == "del":
                     print("Enter account name of the Credentials you want to delete")
                     search_name = input().lower()
@@ -132,7 +135,7 @@ def main():
                         print("_"*40)
                         search_credential.delete_credentials()
                         print('\n')
-                        print(f"Your stored credentials for : {search_credential.account} successfully deleted!!!")
+                        print(f"Your stored credentials for : {search_credential.credentials_username} successfully deleted!!!")
                         print('\n')
                     else:
                         print("The Credential you want to delete does not exist")
