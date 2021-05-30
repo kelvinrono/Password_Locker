@@ -95,7 +95,7 @@ def main():
                     type = input()
                     
                     print("User name : ")
-                    username = input()
+                    username = input().lower()
                     while True:
                         print("use these codes to choose the password modes:\n gp - system generated password,\n tp - type password,\n ")
                         pass_code = input().lower()
@@ -116,7 +116,7 @@ def main():
                 elif short_code == 'dc':
 
                     if display_credentials():
-                        print("These are the accounts saved in the app:")
+                        print("These are the accounts saved in the app: \n ")
                         print('\n')
 
                         for credential in display_credentials():
@@ -128,7 +128,7 @@ def main():
                         print('There is no credentials saved')
 
                 elif short_code == "del":
-                    print("Enter account name of the Credentials you want to delete")
+                    print("Enter Username of the Credentials you want to delete")
                     search_name = input().lower()
                     if find_credential(search_name):
                         search_credential = find_credential(search_name)
@@ -138,7 +138,7 @@ def main():
                         print(f"Your stored credentials for : {search_credential.credentials_username} successfully deleted!!!")
                         print('\n')
                     else:
-                        print("The Credential you want to delete does not exist")
+                        print(" \n The Credential you want to delete does not exist \n")
                             
                     pass
                 elif short_code =='ex':
