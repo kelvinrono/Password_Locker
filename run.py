@@ -36,7 +36,11 @@ def delete_credentials(credential):
     Credentials.delete_credentials()
 def display_user():
     return User.display_user()
-
+def find_credential(account):
+    """
+    Function that finds a Credentials by an account name and returns the Credentials that belong to that account
+    """
+    return Credentials.find_by_username(account)
 
 def display_credentials():
     return Credentials.display_credentials()
@@ -120,8 +124,19 @@ def main():
 
                         print('\n')
 
-                elif short_code=='del':
-                    
+                elif short_code == "del":
+                    print("Enter account name of the Credentials you want to delete")
+                    search_name = input().lower()
+                    if find_credential(search_name):
+                        search_credential = find_credential(search_name)
+                        print("_"*40)
+                        search_credential.delete_credentials()
+                        print('\n')
+                        print(f"Your stored credentials for : {search_credential.account} successfully deleted!!!")
+                        print('\n')
+                    else:
+                        print("The Credential you want to delete does not exist")
+                            
                     pass
                 elif short_code =='ex':
                         print('\n')
