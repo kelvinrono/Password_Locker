@@ -75,7 +75,7 @@ def main():
             print("\n")
 
             while True:
-                print("Use these short codes:\ncc - Create credentials details,\ndc - display credential details,\nex - exit the contact list")
+                print("Use these short codes:\ncc - Create credentials details,\ndc - display credential details,\nex - exit the contact list, \n del - delete account")
                 short_code = input().lower()
                 
                 if short_code == 'cc':
@@ -114,6 +114,10 @@ def main():
                                 print(f"{credential.credentials_account} {credential.credentials_username} .....{credential.credentials_password}")
 
                         print('\n')
+
+                elif short_code=='del':
+                    
+                    pass
                 elif short_code =='ex':
                         print('\n')
                         print("Thanks for using the app. Welcome")
